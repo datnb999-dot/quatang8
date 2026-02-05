@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        /* CSS tạo hiệu ứng trái tim */
+        .heart {
+            position: fixed;
+            top: -10px;
+            font-size: 20px;
+            color: #ff4d6d;
+            user-select: none;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @@keyframes fall {
+            0% {
+                transform: translateY(-50px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Script tạo trái tim rơi ngẫu nhiên
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️'; // Bạn có thể thay bằng 💖 hoặc 💕
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 10 + 15 + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Tốc độ rơi: 300ms tạo 1 trái tim
+        setInterval(createHeart, 300);
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
