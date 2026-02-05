@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://localhost:7115/Webphu -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quà tặng 14/02</title>
+    <link rel="stylesheet" href="./Webphu_files/bootstrap.min.46ein0sx1k.css">
+    <link rel="stylesheet" href="./Webphu_files/site.b9sayid5wm.css">
+    <style>
+        /* CSS tạo hiệu ứng trái tim */
+        .heart {
+            position: fixed;
+            top: -10px;
+            font-size: 20px;
+            color: #ff4d6d;
+            user-select: none;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div b-xgsde8q5kd="" class="container-fluid p-0">
+        <main b-xgsde8q5kd="" role="main">
+            
+<div class="text-center">
+    <div class="custom-container mt-5">
+        <h1 class="display-4">Bây giờ thì chọn quà eim nhé ❤️❤️❤️</h1>
+
+        <div class="button-area">
+            <p class="text-muted">Nhấn vào từng hộp quà để xem bất ngờ eim nhé</p>
+
+            <div class="gift-container mt-4">
+                <button class="gift-box" onclick="showGift(&#39;Một buổi đi chơi ở bất cứ đâu em chọn 🌸&#39;)">
+                    🎁 <span>Quà 1</span>
+                </button>
+
+                <button class="gift-box" onclick="showGift(&#39;Một món quà như vòng tay, dây chuyền, túi xách 😊&#39;)">
+                    🎁 <span>Quà 2</span>
+                </button>
+
+                <button class="gift-box" onclick="showGift(&#39;Trẻ con mới chọn, em lấy cả 2 luôn nhé! 😘&#39;)">
+                    🎁 <span>Quà 3</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="customModalOverlay" class="modal-overlay">
+    <div class="custom-modal-box">
+        <h3 id="modalTitle">❤️ Món quà từ người eo tương lai gửi em  ❤️</h3>
+        <p id="modalBodyText">Nội dung quà tặng...</p>
+        <button onclick="closeMyModal()" class="close-modal-btn">Yêu quá đi!</button>
+    </div>
+</div>
+
+<style>
+    /* 1. Hình nền và giao diện chung */
+    body {
+        background-image: url('/images/anh VTTH 2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .custom-container {
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 40px;
+        border-radius: 30px;
+        display: inline-block;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        backdrop-filter: blur(5px);
+    }
+
+    /* 2. Style cho các hộp quà */
+    .gift-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .gift-box {
+        background: white;
+        border: 2px solid #ff4d6d;
+        border-radius: 20px;
+        padding: 20px;
+        font-size: 50px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+        .gift-box span {
+            font-size: 16px;
+            color: #ff4d6d;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #fff0f3;
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.4);
+        }
+
+    /* 3. Lớp nền mờ căn giữa hộp thoại */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 99999;
+        display: none; /* Ẩn lúc đầu */
+        align-items: center; /* Căn giữa dọc */
+        justify-content: center; /* Căn giữa ngang */
+        backdrop-filter: blur(8px);
+    }
+
+    /* 4. Hộp thoại thông báo */
+    .custom-modal-box {
+        background: white;
+        padding: 40px;
+        border-radius: 30px;
+        text-align: center;
+        max-width: 450px;
+        width: 85%;
+        box-shadow: 0 20px 50px rgba(255, 77, 109, 0.5);
+        border: 3px solid #ff4d6d;
+        animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popUp {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .close-modal-btn {
+        background: #ff4d6d;
+        color: white;
+        border: none;
+        padding: 12px 35px;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 25px;
+        transition: 0.3s;
+    }
+
+        .close-modal-btn:hover {
+            background: #ff1a4a;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+        }
+</style>
+
+<script>
+    function showGift(message) {
+        // Hiện lớp nền mờ và căn giữa theo flex
+        const overlay = document.getElementById('customModalOverlay');
+        overlay.style.display = 'flex';
+        // Đổi nội dung tin nhắn
+        document.getElementById('modalBodyText').innerText = message;
+    }
+
+    function closeMyModal() {
+        // Ẩn lớp nền
+        document.getElementById('customModalOverlay').style.display = 'none';
+    }
+</script>
+        </main>
+    </div>
+
+    <script src="./Webphu_files/jquery.min.o1o13a6vjx.js.download"></script>
+    <script src="./Webphu_files/bootstrap.bundle.min.493y06b0oq.js.download"></script>
+
+    <script>
+        // Script tạo trái tim rơi ngẫu nhiên
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️'; // Bạn có thể thay bằng 💖 hoặc 💕
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 10 + 15 + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Tốc độ rơi: 300ms tạo 1 trái tim
+        setInterval(createHeart, 300);
+    </script>
+
+    
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="./Webphu_files/browserLink" async="async" id="__browserLink_initializationData" data-requestid="3027d6b2763c4040be6875ac880b24d6" data-requestmappingfromserver="false" data-connecturl="http://localhost:54740/873fa4ae3d3b4e829c1dbf957080d498/browserLink"></script>
+<!-- End Browser Link -->
+<script src="./Webphu_files/aspnetcore-browser-refresh.js.download"></script>
+<div class="heart" style="left: 73.331vw; animation-duration: 3.18325s; opacity: 0.603943; font-size: 18.4464px;">❤️</div><div class="heart" style="left: 61.0401vw; animation-duration: 4.6342s; opacity: 0.423128; font-size: 16.434px;">❤️</div><div class="heart" style="left: 76.6704vw; animation-duration: 4.38585s; opacity: 0.210861; font-size: 15.3865px;">❤️</div><div class="heart" style="left: 46.079vw; animation-duration: 4.2496s; opacity: 0.399938; font-size: 18.9559px;">❤️</div><div class="heart" style="left: 76.4085vw; animation-duration: 3.94139s; opacity: 0.494218; font-size: 18.7199px;">❤️</div><div class="heart" style="left: 34.0682vw; animation-duration: 2.84756s; opacity: 0.800114; font-size: 20.6915px;">❤️</div><div class="heart" style="left: 71.5018vw; animation-duration: 2.88822s; opacity: 0.426943; font-size: 16.5811px;">❤️</div><div class="heart" style="left: 89.8776vw; animation-duration: 3.81609s; opacity: 0.154956; font-size: 18.7039px;">❤️</div><div class="heart" style="left: 78.2001vw; animation-duration: 2.67581s; opacity: 0.892603; font-size: 24.7596px;">❤️</div><div class="heart" style="left: 14.847vw; animation-duration: 3.82626s; opacity: 0.410568; font-size: 24.4211px;">❤️</div><div class="heart" style="left: 76.8582vw; animation-duration: 4.59657s; opacity: 0.13576; font-size: 16.6006px;">❤️</div><div class="heart" style="left: 66.5315vw; animation-duration: 4.4606s; opacity: 0.32326; font-size: 16.9664px;">❤️</div><div class="heart" style="left: 73.1476vw; animation-duration: 3.38996s; opacity: 0.455742; font-size: 19.3391px;">❤️</div><div class="heart" style="left: 4.26631vw; animation-duration: 4.34678s; opacity: 0.535101; font-size: 24.4128px;">❤️</div><div class="heart" style="left: 11.6109vw; animation-duration: 3.07467s; opacity: 0.326296; font-size: 22.013px;">❤️</div><div class="heart" style="left: 91.2448vw; animation-duration: 3.89886s; opacity: 0.930088; font-size: 15.7199px;">❤️</div><div class="heart" style="left: 61.9843vw; animation-duration: 3.75188s; opacity: 0.205926; font-size: 23.013px;">❤️</div></body></html>
